@@ -1,0 +1,97 @@
+(pycharmenv)LMB:robler Logs$ scrapy crawl my-offpeak
+2017-04-28 12:47:15 [scrapy] INFO: Scrapy 1.2.1 started (bot: robler)
+2017-04-28 12:47:15 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'robler.spiders', 'SPIDER_MODULES': ['robler.spiders'], 'ROBOTSTXT_OBEY': True, 'BOT_NAME': 'robler'}
+2017-04-28 12:47:15 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2017-04-28 12:47:15 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-04-28 12:47:15 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-04-28 12:47:15 [scrapy] INFO: Enabled item pipelines:
+['robler.pipelines.RoblerPipeline']
+2017-04-28 12:47:15 [scrapy] INFO: Spider opened
+2017-04-28 12:47:15 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-04-28 12:47:15 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6023
+2017-04-28 12:47:15 [scrapy] DEBUG: Crawled (200) <GET http://offpeak.my/robots.txt> (referer: None)
+2017-04-28 12:47:16 [scrapy] DEBUG: Crawled (200) <GET http://offpeak.my/restaurants/category/latest-offers> (referer: None)
+2017-04-28 12:47:16 [scrapy] DEBUG: Scraped from <200 http://offpeak.my/restaurants/category/latest-offers>
+{'category': u'Western', 'unique_id': u'339', 'name': u'Sis & Co (Damansara)', 'page_item_count': 1, 'discount_percentage': u'25%', 'url': u'http://offpeak.my/restaurant/339/sis-co-damansara', 'img_url': u'https://s3-ap-southeast-1.amazonaws.com/offpeak/Malaysia/339/Restaurant_Gallery/58f7308c90ee6_sq.jpg', 'page_counter': 68, 'booked_counts': 0, 'location': u'Selangor'}
+2017-04-28 12:47:16 [scrapy] DEBUG: Scraped from <200 http://offpeak.my/restaurants/category/latest-offers>
+{'category': u'Middle Eastern', 'unique_id': u'270', 'name': u'Marhaba Restaurant (Publika)', 'page_item_count': 2, 'discount_percentage': u'25%', 'url': u'http://offpeak.my/restaurant/270/marhaba-restaurant-publika', 'img_url': u'https://s3-ap-southeast-1.amazonaws.com/offpeak/Malaysia/270/Restaurant_Gallery/58f7251b15361_sq.JPG', 'page_counter': 68, 'booked_counts': 0, 'location': u'Wilayah Persekutuan'}
+2017-04-28 12:47:16 [scrapy] DEBUG: Scraped from <200 http://offpeak.my/restaurants/category/latest-offers>
+{'category': u'Bakery', 'unique_id': u'320', 'name': u'Barcook Bakery Malaysia (The Gardens Mall)', 'page_item_count': 3, 'discount_percentage': u'20%', 'url': u'http://offpeak.my/restaurant/320/barcook-bakery-malaysia-the-gardens-mall', 'img_url': u'https://s3-ap-southeast-1.amazonaws.com/offpeak/Malaysia/320/Restaurant_Gallery/58f9f19f6b667_sq.jpg', 'page_counter': 68, 'booked_counts': 24, 'location': u'Wilayah Persekutuan'}
+2017-04-28 12:47:16 [scrapy] DEBUG: Scraped from <200 http://offpeak.my/restaurants/category/latest-offers>
+{'category': u'Healthy eating', 'unique_id': u'254', 'name': u'Salad Atelier (Starling Mall)', 'page_item_count': 4, 'discount_percentage': u'30%', 'url': u'http://offpeak.my/restaurant/254/salad-atelier-starling-mall', 'img_url': u'https://s3-ap-southeast-1.amazonaws.com/offpeak/Malaysia/254/Restaurant_Gallery/58eb3dafba20d_sq.jpg', 'page_counter': 68, 'booked_counts': 82, 'location': u'Selangor'}
+2017-04-28 12:47:16 [scrapy] DEBUG: Scraped from <200 http://offpeak.my/restaurants/category/latest-offers>
+{'category': u'Fast Food', 'unique_id': u'219', 'name': u'Crispy Crust (Sunway Pyramid)', 'page_item_count': 5, 'discount_percentage': u'20%', 'url': u'http://offpeak.my/restaurant/219/crispy-crust-sunway-pyramid', 'img_url': u'https://s3-ap-southeast-1.amazonaws.com/offpeak/Malaysia/219/Restaurant_Gallery/58dcb410b3388_sq.jpg', 'page_counter': 68, 'booked_counts': 14, 'location': u'Selangor'}
+2017-04-28 12:47:16 [scrapy] DEBUG: Scraped from <200 http://offpeak.my/restaurants/category/latest-offers>
+{'category': u'Vegetarian', 'unique_id': u'250', 'name': u'vburgcafe (JB)', 'page_item_count': 6, 'discount_percentage': u'20%', 'url': u'http://offpeak.my/restaurant/250/vburgcafe-jb', 'img_url': u'https://s3-ap-southeast-1.amazonaws.com/offpeak/Malaysia/250/Restaurant_Gallery/58eafcd476bb9_sq.jpg', 'page_counter': 68, 'booked_counts': 12, 'location': u'Johor'}
+Error 1064: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's by Chef Korn (Mid Valley)', 'http://offpeak.my/restaurant/437/tiffins-by-chef-' at line 3
+2017-04-28 12:47:16 [scrapy] DEBUG: Scraped from <200 http://offpeak.my/restaurants/category/latest-offers>
+{'category': u'Thai', 'unique_id': u'437', 'name': u"Tiffin's by Chef Korn (Mid Valley)", 'page_item_count': 7, 'discount_percentage': u'15%', 'url': u'http://offpeak.my/restaurant/437/tiffins-by-chef-korn-mid-valley', 'img_url': u'http://offpeak.my/assets/restaurant/437/gallery/fc12d16748a16a9ac909fe20fbe33571_sq.jpg', 'page_counter': 68, 'booked_counts': 3168, 'location': u'Kuala Lumpur'}
+2017-04-28 12:47:16 [scrapy] DEBUG: Scraped from <200 http://offpeak.my/restaurants/category/latest-offers>
+{'category': u'Fast Food', 'unique_id': u'217', 'name': u'Figure Fuel (Sunway Velocity Mall)', 'page_item_count': 8, 'discount_percentage': u'15%', 'url': u'http://offpeak.my/restaurant/217/figure-fuel-sunway-velocity-mall', 'img_url': u'https://s3-ap-southeast-1.amazonaws.com/offpeak/Malaysia/217/Restaurant_Gallery/58db78ca6be50_sq.jpg', 'page_counter': 68, 'booked_counts': 6, 'location': u'Selangor'}
+2017-04-28 12:47:16 [scrapy] DEBUG: Scraped from <200 http://offpeak.my/restaurants/category/latest-offers>
+{'category': u'Korean', 'unique_id': u'102', 'name': u'Oiso Korean (Jaya 33)', 'page_item_count': 9, 'discount_percentage': u'30%', 'url': u'http://offpeak.my/restaurant/102/oiso-korean-jaya-33', 'img_url': u'http://offpeak.my/assets/restaurant/102/gallery/e2562da034a293ca59863fe231061600_sq.JPG', 'page_counter': 68, 'booked_counts': 770, 'location': u'Selangor'}
+2017-04-28 12:47:16 [scrapy] DEBUG: Scraped from <200 http://offpeak.my/restaurants/category/latest-offers>
+{'category': u'Chinese', 'unique_id': u'153', 'name': u'Oriental Chinese Cuisine (Pullman)', 'page_item_count': 10, 'discount_percentage': u'20%', 'url': u'http://offpeak.my/restaurant/153/oriental-chinese-cuisine-pullman', 'img_url': u'https://s3-ap-southeast-1.amazonaws.com/offpeak/Malaysia/153/Restaurant_Gallery/58e44a85d687c_sq.JPG', 'page_counter': 68, 'booked_counts': 4, 'location': u'Kuala Lumpur'}
+2017-04-28 12:47:16 [scrapy] DEBUG: Scraped from <200 http://offpeak.my/restaurants/category/latest-offers>
+{'category': u'Japanese', 'unique_id': u'2623', 'name': u'Kin San Kichi Japanese (Desa Sri Hartamas)', 'page_item_count': 11, 'discount_percentage': u'15%', 'url': u'http://offpeak.my/restaurant/2623/kin-san-kichi-japanese-desa-sri-hartamas', 'img_url': u'http://offpeak.my/assets/restaurant/2623/gallery/c65201d643eb1ee6ad2bdd39d9f38336_sq.jpg', 'page_counter': 68, 'booked_counts': 357, 'location': u'Wilayah Persekutuan'}
+2017-04-28 12:47:16 [scrapy] DEBUG: Scraped from <200 http://offpeak.my/restaurants/category/latest-offers>
+{'category': u'International', 'unique_id': u'112', 'name': u'Cafe BLD (Renaissance JB Hotel)', 'page_item_count': 12, 'discount_percentage': u'15%', 'url': u'http://offpeak.my/restaurant/112/cafe-bld-renaissance-jb-hotel', 'img_url': u'https://s3-ap-southeast-1.amazonaws.com/offpeak/Malaysia/112/Restaurant_Gallery/58d21762e3df6_sq.jpg', 'page_counter': 68, 'booked_counts': 21, 'location': u'Johor'}
+2017-04-28 12:47:16 [scrapy] DEBUG: Scraped from <200 http://offpeak.my/restaurants/category/latest-offers>
+{'category': u'Chinese', 'unique_id': u'113', 'name': u'Wan Li Restaurant (Renaissance JB Hotel)', 'page_item_count': 13, 'discount_percentage': u'15%', 'url': u'http://offpeak.my/restaurant/113/wan-li-restaurant-renaissance-jb-hotel', 'img_url': u'https://s3-ap-southeast-1.amazonaws.com/offpeak/Malaysia/113/Restaurant_Gallery/58d217ad776c5_sq.jpg', 'page_counter': 68, 'booked_counts': 7, 'location': u'Johor'}
+2017-04-28 12:47:16 [scrapy] DEBUG: Scraped from <200 http://offpeak.my/restaurants/category/latest-offers>
+{'category': u'Lounge & Bar', 'unique_id': u'124', 'name': u'R Bar (Renaissance JB Hotel)', 'page_item_count': 14, 'discount_percentage': u'10%', 'url': u'http://offpeak.my/restaurant/124/r-bar-renaissance-jb-hotel', 'img_url': u'https://s3-ap-southeast-1.amazonaws.com/offpeak/Malaysia/124/Restaurant_Gallery/58d2186ad81a7_sq.jpg', 'page_counter': 68, 'booked_counts': 0, 'location': u'Johor'}
+2017-04-28 12:47:16 [scrapy] DEBUG: Scraped from <200 http://offpeak.my/restaurants/category/latest-offers>
+{'category': u'International', 'unique_id': u'125', 'name': u'TCCC (Renaissance JB Hotel)', 'page_item_count': 15, 'discount_percentage': u'20%', 'url': u'http://offpeak.my/restaurant/125/tccc-renaissance-jb-hotel', 'img_url': u'https://s3-ap-southeast-1.amazonaws.com/offpeak/Malaysia/125/Restaurant_Gallery/58e22c2b11f95_sq.jpg', 'page_counter': 68, 'booked_counts': 0, 'location': u'Johor'}
+2017-04-28 12:47:16 [scrapy] DEBUG: Scraped from <200 http://offpeak.my/restaurants/category/latest-offers>
+{'category': u'Spanish', 'unique_id': u'196', 'name': u'El Cerdo (Changkat Bukit Bintang)', 'page_item_count': 16, 'discount_percentage': u'25%', 'url': u'http://offpeak.my/restaurant/196/el-cerdo-changkat-bukit-bintang', 'img_url': u'https://s3-ap-southeast-1.amazonaws.com/offpeak/Malaysia/196/Restaurant_Gallery/58db1b613b268_sq.jpg', 'page_counter': 68, 'booked_counts': 80, 'location': u'Kuala Lumpur'}
+2017-04-28 12:47:16 [scrapy] DEBUG: Scraped from <200 http://offpeak.my/restaurants/category/latest-offers>
+{'category': u'International', 'unique_id': u'216', 'name': u'Dining In The Dark (Changkat Bukit Bintang)', 'page_item_count': 17, 'discount_percentage': u'20%', 'url': u'http://offpeak.my/restaurant/216/dining-in-the-dark-changkat-bukit-bintang', 'img_url': u'https://s3-ap-southeast-1.amazonaws.com/offpeak/Malaysia/216/Restaurant_Gallery/58db294ce669d_sq.jpg', 'page_counter': 68, 'booked_counts': 50, 'location': u'Kuala Lumpur'}
+2017-04-28 12:47:16 [scrapy] DEBUG: Scraped from <200 http://offpeak.my/restaurants/category/latest-offers>
+{'category': u'Asian', 'unique_id': u'199', 'name': u'Opium (Changkat Bukit Bintang)', 'page_item_count': 18, 'discount_percentage': u'25%', 'url': u'http://offpeak.my/restaurant/199/opium-changkat-bukit-bintang', 'img_url': u'https://s3-ap-southeast-1.amazonaws.com/offpeak/Malaysia/199/Restaurant_Gallery/58db23e762cb6_sq.jpg', 'page_counter': 68, 'booked_counts': 40, 'location': u'Kuala Lumpur'}
+2017-04-28 12:47:16 [scrapy] DEBUG: Scraped from <200 http://offpeak.my/restaurants/category/latest-offers>
+{'category': u'Western', 'unique_id': u'198', 'name': u'The Steakhouse (Changkat Bukit Bintang)', 'page_item_count': 19, 'discount_percentage': u'25%', 'url': u'http://offpeak.my/restaurant/198/the-steakhouse-changkat-bukit-bintang', 'img_url': u'https://s3-ap-southeast-1.amazonaws.com/offpeak/Malaysia/198/Restaurant_Gallery/58db1d683602e_sq.jpg', 'page_counter': 68, 'booked_counts': 82, 'location': u'Kuala Lumpur'}
+2017-04-28 12:47:16 [scrapy] DEBUG: Scraped from <200 http://offpeak.my/restaurants/category/latest-offers>
+{'category': u'Western', 'unique_id': u'197', 'name': u'The Whisky Bar (Changkat Bukit Bintang)', 'page_item_count': 20, 'discount_percentage': u'25%', 'url': u'http://offpeak.my/restaurant/197/the-whisky-bar-changkat-bukit-bintang', 'img_url': u'https://s3-ap-southeast-1.amazonaws.com/offpeak/Malaysia/197/Restaurant_Gallery/58db21ff249cc_sq.jpg', 'page_counter': 68, 'booked_counts': 12, 'location': u'Kuala Lumpur'}
+2017-04-28 12:47:16 [scrapy] DEBUG: Crawled (200) <GET http://offpeak.my/restaurants/category/latest-offers?page=68> (referer: http://offpeak.my/restaurants/category/latest-offers)
+2017-04-28 12:47:17 [scrapy] INFO: Closing spider (finished)
+2017-04-28 12:47:17 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1374,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'downloader/response_bytes': 17434,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 3,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2017, 4, 28, 5, 47, 17, 20666),
+ 'item_scraped_count': 20,
+ 'log_count/DEBUG': 24,
+ 'log_count/INFO': 7,
+ 'request_depth_max': 1,
+ 'response_received_count': 3,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'start_time': datetime.datetime(2017, 4, 28, 5, 47, 15, 457896)}
+2017-04-28 12:47:17 [scrapy] INFO: Spider closed (finished)
+(pycharmenv)LMB:robler Logs$
