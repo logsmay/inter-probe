@@ -1,0 +1,75 @@
+#!/bin/bash
+
+# HDFS & hive constants
+export date_="<yyyy-mm-dd>" # date to export as a parameter for e.g: `date -d "1 day ago" '+%Y-%m-%d'` to get T-1 Data
+export hdfs_location="hdfs://uri:port"
+export hdfs_rootdir="path/to/hdfs/root/"
+export hive_db_name="alice_baba_db"
+
+hf_rootdir=$hdfs_rootdir/$hive_db_name
+
+year_="year="$(echo `date -d $date_ +"%Y"`)
+month_="month="$(echo `date -d $date_ +"%m"`)
+day_="day="$(echo `date -d $date_ +"%d"`)
+
+source_file="/data/sales/${year_}${month_}${day_}/data.csv"
+
+dbname=$hive_db_name
+dbloc=$hdfs_location$hdfs_rootdir$dbname
+tblname="lzd_mysql_order"
+echo "creating database: " $dbloc
+# DDL Statement to execute create DB & create table based on the above parameters
+hive --hiveconf dbname=$dbname --hiveconf dbloc=$dbloc --hiveconf tblname=$tblname -f capsule_create_schema.hql
+
+
+# A snippet of bash script function to hdfs transfer to specified root directory
+#option A
+hdfs_transfer() {
+  # path to hdfs directory e.g. /path/to/dir/hivetablename/YYYY/MM/DD
+  hdfs_file_dir=$hf_rootdir"/"$tbl_name"/"$year_"/"$month_"/"$day_
+  echo "create directory if not exists: "$hdfs_file_dir
+  hadoop fs -mkdir -p $hdfs_file_dir
+  t_start_=$(date +%s.%N)
+  echo "copying file to hdfs"
+  hadoop fs -cp $source_file $hdfs_file_dir
+  printf "file copy took: %.2f second(s)" $(echo "$(date +%s.%N) - $t_start_" | bc)
+  #run msck command to refresh/repair partition
+  echo "refreshing hive metastore through msck command"
+  hive -e "MSCK REPAIR TABLE $hive_db_name.$tbl_name"
+}
+
+########################<ddl>create_schema.hql########################
+-- Create database -----------------------
+CREATE DATABASE IF NOT EXISTS `${hiveconf:dbname}` LOCATION '${hiveconf:dbloc}';
+
+-- lzd_mysql_order table ---------------------------------------------------------
+CREATE EXTERNAL TABLE IF NOT EXISTS `${hiveconf:dbname}`.`${hiveconf:tblname}`(
+    `CREATED_DATE` string,
+    `VERIFIED_DATE` string,
+    `ORDER_NUMBER` string,
+    `COUNTRY` string,
+    `CUSTOMER_ID` string,
+    `PRODUCT` string,
+    `STATUS` string)
+PARTITIONED BY (
+    `year` int,
+    `month` int,
+    `day` int)
+ROW FORMAT SERDE
+    'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+WITH SERDEPROPERTIES (
+    'separatorChar' = '\,', 'quoteChar' = '\"', 'escapeChar' = '\\')
+LOCATION
+    '${hiveconf:dbloc}/${hiveconf:tblname}'
+TBLPROPERTIES (
+    'skip.header.line.count' = '1',
+    'serialization.null.format' = '');
+########################<end>create_schema.hql########################
+
+An alternative way instead of copying from hdfs to hive tabel external location -
+we can simply create a table with a modified partition (PARTITION BY `dt` int)
+Use Alter Table command everyday pointing the incoming data with the new partitioned location
+for e.g:
+ALTER TABLE lzd_mysql_order
+    ADD PARTITION (dt='$year_$month_$day_')
+    location '/data/sales/$year_$month_$day_/data.csv'
